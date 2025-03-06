@@ -18,8 +18,8 @@ data_sample: "true_inputs/run.jsonl"
 generation:
   prompt: "prompt/generation_1.txt"
   seed: "prompt/seed_1.md"      
-  output: "true_outputs/1/sample/generation_1.jsonl"
-  topic_output: "true_outputs/1/sample/generation_1.md"
+  output: "true_outputs/1/generation_1.jsonl"
+  topic_output: "true_outputs/1/generation_1.md"
 
 # --- Refinement ---
 # refining_topics: whether to refine topics or not
@@ -31,9 +31,9 @@ generation:
 refining_topics: False
 refinement:
   prompt: "prompt/refinement.txt"
-  output: "true_outputs/1/sample/refinement.jsonl"
-  topic_output: "true_outputs/1/sample/refinement.md"
-  mapping_file: "true_outputs/1/sample/refinement_mapping.json"
+  output: "true_outputs/1/refinement.jsonl"
+  topic_output: "true_outputs/1/refinement.md"
+  mapping_file: "true_outputs/1/refinement_mapping.json"
   remove: True      
 
 # --- Subtopic Generation ---
@@ -45,8 +45,8 @@ refinement:
 generate_subtopics: False
 generation_2:
   prompt: "prompt/generation_2.txt"
-  output: "true_outputs/1/sample/generation_2.jsonl"
-  topic_output: "true_outputs/1/sample/generation_2.md"
+  output: "true_outputs/1/generation_2.jsonl"
+  topic_output: "true_outputs/1/generation_2.md"
 
 # --- Assignment ---
 # prompt: prompt to assign topics to documents
@@ -54,7 +54,7 @@ generation_2:
 # ------------------
 assignment:
   prompt: "prompt/assignment.txt"
-  output: "true_outputs/1/sample/assignment.jsonl"
+  output: "true_outputs/1/assignment.jsonl"
 
 # --- Correction ---
 # prompt: prompt to correct topics
@@ -62,4 +62,4 @@ assignment:
 # ------------------
 correction:
   prompt: "prompt/correction.txt"
-  output: "true_outputs/1/sample/assignment_corrected.jsonl"
+  output: "true_outputs/1/assignment_corrected.jsonl"
