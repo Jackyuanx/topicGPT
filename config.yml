@@ -42,7 +42,7 @@ refinement:
 # output: output file containing texts and their corresponding high-level and low-level topics
 # topic_output: md file containing topic tree
 # ---------------------------
-generate_subtopics: False
+generate_subtopics: True
 generation_2:
   prompt: "prompt/generation_2.txt"
   output: "true_outputs/1/generation_2.jsonl"
