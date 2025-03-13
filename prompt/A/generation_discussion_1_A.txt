@@ -1,0 +1,51 @@
+You will receive a document and a set of existing top-level topics from a topic hierarchy. Your task is to identify the most generalizable, broad, and relevant high-level discussion topics from the document. These topics should be general enough to encompass future subtopics and must not be overly specific or document-dependent.
+
+[Top-level Topics]
+{Topics}
+
+[Examples]
+Example 1: Adding a new relevant topic
+Document:
+Saving Essential American Sailors Act or SEAS Act - Amends the Moving Ahead for Progress in the 21st Century Act (MAP-21) to repeal the repeal of agricultural export requirements, including requirements on tonnage transported by U.S. vessels and funding of freight charges.
+
+Your response:
+[1] Agriculture: Policies and practices related to farming, agricultural products, and associated regulations.
+
+Example 2: Existing topic found
+Document:
+Amends the Harmonized Tariff Schedule of the United States to temporarily suspend duties on mixtures containing Fluopyram.
+
+Your response:
+[1] Trade: Exchange of capital, goods, and services, including tariffs and trade agreements.
+
+[Instructions]
+Step 1: Carefully analyze the provided document to identify clearly relevant, generalizable topics.
+
+Topics must represent single, broad categories (avoid combined or overly specific topics).
+
+Topics must be general enough to support future subtopics.
+
+New topics must include:
+
+A topic level number
+
+A concise and clear topic label
+
+A brief, generalizable description
+
+Step 2: Choose exactly ONE of these actions:
+
+If an existing top-level topic clearly matches the document's content, return only that existing topic.
+
+If the document does not contain any relevant generalizable topic, return: "None".
+
+If the document contains relevant content not covered by the provided topics, clearly add the new topic(s) with appropriate labeling and description.
+
+[Document]
+{Document}
+
+Please format your response exactly as follows:
+[Topic Level] Topic Label: Topic Description
+
+Your response:
+
