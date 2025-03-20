@@ -63,3 +63,13 @@ assignment:
 correction:
   prompt: "prompt/correction.txt"
   output: "true_outputs/1/assignment_corrected.jsonl"
+
+
+# --- Comparison ---
+# prompt: prompt to compare
+# output: output of topic correction
+# ------------------
+generate_comparison: True
+comparison:
+  prompt: "prompt/A/generation_A.txt"
+  output: "comparisons/1.jsonl"
