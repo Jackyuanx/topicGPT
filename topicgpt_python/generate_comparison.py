@@ -1,8 +1,9 @@
 import os
 import json
-import openai
+from topicgpt_python.utils import *  # Ensure this import is available
 
-def generate_comparison(model, assign_topics_output, prompt_file, output_file, verbose=True):
+def generate_comparison(api, model, assign_topics_output, prompt_file, output_file, verbose=True):
+    # Read the assignment output file (one JSON per line)
     with open(assign_topics_output, "r", encoding="utf-8") as f:
         lines = f.readlines()
     
@@ -19,34 +20,33 @@ def generate_comparison(model, assign_topics_output, prompt_file, output_file, v
         f"Document 2:\nText: {doc2.get('text', '')}\nTopics: {doc2.get('response', '')}"
     )
     
-    # Read the prompt template which includes the placeholder {document}
+    # Read the prompt template (which contains the placeholder {document})
     with open(prompt_file, "r", encoding="utf-8") as pf:
         prompt_template = pf.read()
     
-    # Replace the placeholder with the constructed documents text
+    # Replace the placeholder with the constructed document text
     final_prompt = prompt_template.replace("{document}", documents_text)
     
     if verbose:
-        print("Final prompt sent to OpenAI:")
+        print("Final prompt sent to API Agent:")
         print(final_prompt)
     
-    # Call the OpenAI API (using ChatCompletion for a conversation-like prompt)
-    response = openai.ChatCompletion.create(
-        model=model,
-        messages=[
-            {"role": "user", "content": final_prompt}
-        ],
-        temperature=0  # Lower temperature for deterministic output
-    )
+    # Initialize the API agent using APIClient with the given API and model
+    api_agent = APIClient(api=api, model=model)
     
-    # Extract the generated text from the response
-    generated_text = response.choices[0].message["content"].strip()
+    # Set parameters for the API call (adjust as needed)
+    max_tokens = 1000
+    temperature = 0.0
+    top_p = 1.0
+    
+    # Call the API agent to get the comparison text
+    generated_text = api_agent.iterative_prompt(final_prompt, max_tokens, temperature, top_p, verbose=verbose)
     
     if verbose:
         print("Generated Comparison:")
         print(generated_text)
     
-    # Prepare the output JSON object (here we assign an id of 1)
+    # Prepare the output JSON object
     output_data = {"id": 1, "comparison": generated_text}
     
     # Write the output as one JSON object (one line) to the output file
