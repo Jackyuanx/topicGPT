@@ -7,7 +7,7 @@ verbose: True
 # data_sample: input file (.jsonl format)
 # content: each file should have a text, and optionally id and label columns
 # ----------------- 
-data_sample: "true_inputs/run.jsonl"
+data_sample: "true_inputs/run2.jsonl"
 
 # --- Generation ---
 # prompt: prompt to generate 1st-level topics
@@ -18,8 +18,55 @@ data_sample: "true_inputs/run.jsonl"
 generation:
   prompt: "prompt/generation_1.txt"
   seed: "prompt/seed_1.md"      
-  output: "true_outputs/1/generation_1.jsonl"
+  output: "true_outputs/1/generation_1_2.jsonl"
   topic_output: "true_outputs/1/generation_1.md"
+
+
+
+# --- Subtopic Generation ---
+# generate_subtopics: whether to generate subtopics or not
+# prompt: prompt to generate subtopic to each high-level topic, given some example documents that correspond to that high-level topic
+# output: output file containing texts and their corresponding high-level and low-level topics
+# topic_output: md file containing topic tree
+# ---------------------------
+generate_subtopics: True
+generation_2:
+  prompt: "prompt/generation_2.txt"
+  output: "true_outputs/1/generation_2_2.jsonl"
+  topic_output: "true_outputs/1/generation_2_2.md"
+
+# --- Assignment ---
+# prompt: prompt to assign topics to documents
+# output: output of topic assignment
+# ------------------
+assignment:
+  prompt: "prompt/assignment.txt"
+  output: "true_outputs/1/assignment_2_2.jsonl"
+
+
+
+# --- Comparison ---
+# ------------------
+generate_comparison: True
+comparison:
+  prompt: "prompt/A/generation_A.txt"
+  output: "comparisons/2.jsonl"
+
+# --- Baseline ---
+# ------------------
+baseline:
+  prompt: "prompt/A/baseline.txt"
+  output: "baseline/2.jsonl"
+
+
+# --- Evaluate ---
+# ------------------
+evaluate:
+  prompt: "prompt/A/evaluate.txt"
+  output: "evaluate/2.jsonl"
+
+
+
 
 # --- Refinement ---
 # refining_topics: whether to refine topics or not
@@ -36,25 +83,7 @@ refinement:
   mapping_file: "true_outputs/1/refinement_mapping.json"
   remove: True      
 
-# --- Subtopic Generation ---
-# generate_subtopics: whether to generate subtopics or not
-# prompt: prompt to generate subtopic to each high-level topic, given some example documents that correspond to that high-level topic
-# output: output file containing texts and their corresponding high-level and low-level topics
-# topic_output: md file containing topic tree
-# ---------------------------
-generate_subtopics: True
-generation_2:
-  prompt: "prompt/generation_2.txt"
-  output: "true_outputs/1/generation_2.jsonl"
-  topic_output: "true_outputs/1/generation_2.md"
 
-# --- Assignment ---
-# prompt: prompt to assign topics to documents
-# output: output of topic assignment
-# ------------------
-assignment:
-  prompt: "prompt/assignment.txt"
-  output: "true_outputs/1/assignment_2.jsonl"
 
 # --- Correction ---
 # prompt: prompt to correct topics
@@ -63,24 +92,3 @@ assignment:
 correction:
   prompt: "prompt/correction.txt"
   output: "true_outputs/1/assignment_corrected.jsonl"
-
-
-# --- Comparison ---
-# ------------------
-generate_comparison: True
-comparison:
-  prompt: "prompt/A/generation_A.txt"
-  output: "comparisons/1.jsonl"
-
-# --- Baseline ---
-# ------------------
-baseline:
-  prompt: "prompt/A/baseline.txt"
-  output: "baseline/1.jsonl"
-
-
-# --- Evaluate ---
-# ------------------
-evaluate:
-  prompt: "prompt/A/evaluate.txt"
-  output: "evaluate/1.jsonl"
