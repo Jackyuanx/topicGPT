@@ -66,10 +66,21 @@ correction:
 
 
 # --- Comparison ---
-# prompt: prompt to compare
-# output: output of topic correction
 # ------------------
 generate_comparison: True
 comparison:
   prompt: "prompt/A/generation_A.txt"
   output: "comparisons/1.jsonl"
+
+# --- Baseline ---
+# ------------------
+baseline:
+  prompt: "prompt/A/baseline.txt"
+  output: "baseline/1.jsonl"
+
+
+# --- Evaluate ---
+# ------------------
+evaluate:
+  prompt: "prompt/A/evaluate.txt"
+  output: "evaluate/1.jsonl"

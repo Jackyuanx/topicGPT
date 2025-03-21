@@ -1,0 +1,15 @@
+You are an expert evaluator. Two comparisons are provided below, each generated following specific instructions. Your task is to evaluate them based on accuracy, comprehensiveness, clarity, and adherence to the guidelines provided in the comparison prompt.
+
+Comparison One:
+{comparisonone}
+
+Comparison Two:
+{comparisontwo}
+
+Please assign a score based on your evaluation:
+- Enter "2" if you prefer Comparison One.
+- Enter "0" if you prefer Comparison Two.
+- Enter "1" if you are unable to choose a clear winner or find them equivalent.
+
+Your response should be a single number: 2, 1, or 0.
+Your response: 
