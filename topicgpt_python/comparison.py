@@ -16,8 +16,8 @@ def comparison(api, model, assign_topics_output, prompt_file, output_file, verbo
     
     # Construct the combined document text including topics
     documents_text = (
-        f"Document 1:\nText: {doc1.get('text', '')}\nTopics: {doc1.get('responses', '')}\n\n"
-        f"Document 2:\nText: {doc2.get('text', '')}\nTopics: {doc2.get('responses', '')}"
+        f"Document 1:\nText: {doc1.get('text', '')}\n\n\nTopics: {doc1.get('responses', '')}\n\n"
+        f"Document 2:\nText: {doc2.get('text', '')}\n\n\nTopics: {doc2.get('responses', '')}"
     )
     
     # Read the prompt template (which contains the placeholder {document})
