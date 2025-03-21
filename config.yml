@@ -54,7 +54,7 @@ generation_2:
 # ------------------
 assignment:
   prompt: "prompt/assignment.txt"
-  output: "true_outputs/1/assignment.jsonl"
+  output: "true_outputs/1/assignment_2.jsonl"
 
 # --- Correction ---
 # prompt: prompt to correct topics
