@@ -1,1 +1,1 @@
-[1] Urban and Regional Planning (Count: 2): Involves the development and design of land use and the built environment, including the infrastructure passing into and out of urban areas, such as transportation, communications, and distribution networks.
+[1] Climate Change (Count: 2): Addresses the causes, impacts, and mitigation strategies related to global climate change and environmental sustainability.
