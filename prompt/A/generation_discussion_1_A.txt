@@ -1,51 +1,52 @@
-You will receive a document and a set of existing top-level topics from a topic hierarchy. Your task is to identify the most generalizable, broad, and relevant high-level discussion topics from the document. These topics should be general enough to encompass future subtopics and must not be overly specific or document-dependent.
+You will receive a document and a set of existing top-level topics from a topic hierarchy. Your task is to identify clear, generalizable, and classification-driven discussion points from the document. These discussion points should explicitly highlight meaningful differences, suitable for comparative analysis, and must be general enough to accommodate future subtopics or detailed exploration.
 
 [Top-level Topics]
 {Topics}
 
 [Examples]
-Example 1: Adding a new relevant topic
+
+Example 1: Adding a new relevant discussion point
 Document:
 Saving Essential American Sailors Act or SEAS Act - Amends the Moving Ahead for Progress in the 21st Century Act (MAP-21) to repeal the repeal of agricultural export requirements, including requirements on tonnage transported by U.S. vessels and funding of freight charges.
 
 Your response:
-[1] Agriculture: Policies and practices related to farming, agricultural products, and associated regulations.
+[1] Agricultural Export Regulations: Differences in policy requirements for exporting agricultural products, including transportation tonnage and freight funding.
 
-Example 2: Existing topic found
+Example 2: Existing discussion point found
 Document:
 Amends the Harmonized Tariff Schedule of the United States to temporarily suspend duties on mixtures containing Fluopyram.
 
 Your response:
-[1] Trade: Exchange of capital, goods, and services, including tariffs and trade agreements.
+[1] Trade Tariffs: Differences in tariff policies, duty suspensions, and their impact on trade agreements.
 
 [Instructions]
-Step 1: Carefully analyze the provided document to identify clearly relevant, generalizable topics.
+Step 1: Carefully analyze the provided document to identify clearly relevant, generalizable, and comparative discussion points suitable for classification-driven analysis.
 
-Topics must represent single, broad categories (avoid combined or overly specific topics).
+Discussion points must represent single, broad categories explicitly suited for highlighting meaningful differences.
 
-Topics must be general enough to support future subtopics.
+Discussion points must be general enough to support future subtopics.
 
-New topics must include:
+New discussion points must include:
 
 A topic level number
 
-A concise and clear topic label
+A concise and clear discussion point label
 
-A brief, generalizable description
+A brief, generalizable description explicitly suited for comparative or classification-driven analysis
 
 Step 2: Choose exactly ONE of these actions:
 
-If an existing top-level topic clearly matches the document's content, return only that existing topic.
+If an existing top-level discussion point clearly matches the document's content, return only that existing point.
 
-If the document does not contain any relevant generalizable topic, return: "None".
+If the document does not contain any relevant generalizable comparative discussion point, return: "None".
 
-If the document contains relevant content not covered by the provided topics, clearly add the new topic(s) with appropriate labeling and description.
+If the document contains relevant content not covered by the provided points, clearly add the new discussion point(s) with appropriate labeling and description.
 
 [Document]
 {Document}
 
 Please format your response exactly as follows:
-[Topic Level] Topic Label: Topic Description
+[Topic Level] Discussion Point Label: Discussion Point Description
 
 Your response:
 
